@@ -48,6 +48,6 @@ public class Lineup implements ILineup {
     
     @Override
     public String toString(){
-        return "id: " + this.id + ", Map: " + this.map + ", Spike Planted on: " + this.landingLocation + ". You need to stand at: " + this.aimLocation + " and aim at" + this.UI;
+        return "id: " + this.id + ", map: " + this.map + ", landingLocation: " + this.landingLocation + ", aimLocation: " + this.aimLocation + ", UI: " + this.UI;
     }
 }
