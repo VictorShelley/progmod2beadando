@@ -10,7 +10,7 @@ package business;
  */
 public class Lineup implements ILineup {
     private Integer id;
-    private MapEnum map; //Split, Bind, Ascend, Pearl, Breeze, Icebox, Fracture
+    private MapEnum map; //Split, Bind, Ascend, Pearl, Breeze, Icebox, Fracture, Haven
     private String landingLocation;
     private String aimLocation;
     private String UI;
