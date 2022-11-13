@@ -16,6 +16,7 @@ public class Lineup implements ILineup {
     private String UI;
 
     public Lineup(MapEnum map, String landingLocation, String aimLocation, String UI) {
+        //this.map = MapEnum.valueOf(map);
         this.map = map;
         this.landingLocation = landingLocation;
         this.aimLocation = aimLocation;

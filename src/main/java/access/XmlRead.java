@@ -5,8 +5,6 @@
 package access;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.Date;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -25,7 +23,7 @@ public class XmlRead {
     
     public void handleException(Exception ex){
     
-        try{ //Integer id,MapEnum map, String landingLocation, String aimLocation, String UI
+        try{
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = dbf.newDocumentBuilder();
             File f = new File("submitted.xml");
@@ -35,17 +33,17 @@ public class XmlRead {
             Element lineup = xml.createElement("lineup");
             Element map = xml.createElement("map");
             map.setTextContent(ex.getMessage());
-            Element landingL = xml.createElement("landingL");
-            landingL.setTextContent(ex.getMessage());
-            Element aimL = xml.createElement("aimL");
-            aimL.setTextContent(ex.getMessage());
+            Element landingLocation = xml.createElement("landingLocation");
+            landingLocation.setTextContent(ex.getMessage());
+            Element aimLocation = xml.createElement("aimLocation");
+            aimLocation.setTextContent(ex.getMessage());
             Element UI = xml.createElement("UI");
             UI.setTextContent(ex.getMessage());
             //TODO: adatokat ki kell még menteni!!!!
             
             lineup.appendChild(map);
-            lineup.appendChild(landingL);
-            lineup.appendChild(aimL);
+            lineup.appendChild(landingLocation);
+            lineup.appendChild(aimLocation);
             lineup.appendChild(UI);
             root.appendChild(lineup);
             TransformerFactory tf = TransformerFactory.newInstance();
