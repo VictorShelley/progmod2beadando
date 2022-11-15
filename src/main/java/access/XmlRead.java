@@ -71,16 +71,11 @@ public class XmlRead {
                   String UI = element.getElementsByTagName("UI").item(0).getTextContent();
 
                   
-                  String ki = "id: " + id;
-                  read.put(ki);
-                  ki = "map: " + map;
-                  read.put(ki);
-                  ki = "Landing Location: " + landingLocation;
-                  read.put(ki);
-                  ki = "aimLocation: " + aimLocation;
-                  read.put(ki);
-                  ki = "UI: " + UI;
-                  read.put(ki);
+                  read.put("id: " + id);
+                  read.put("Map: " + map);
+                  read.put("Landing Location: " + landingLocation);
+                  read.put("Aim Location: " + aimLocation);
+                  read.put("UI: " + UI);
 
               }
           }
