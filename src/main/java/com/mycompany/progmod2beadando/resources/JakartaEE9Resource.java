@@ -7,7 +7,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.json.JSONObject;
-import access.XmlRead;
+import controller.XmlRead;
 import org.json.JSONArray;
 /**
  *
