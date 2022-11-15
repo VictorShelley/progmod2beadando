@@ -35,7 +35,7 @@ import org.json.JSONObject;
 public class XmlRead {
     
     //private static final String FILENAME = "submitted.xml";
-    private static final String FILENAME = "D:\\Netbeans Projects\\progmod2beadando\\src\\main\\java\\access\\submitted.xml";
+    private static final String FILENAME = "D:\\Netbeans Projects\\progmod2beadando\\src\\main\\java\\controller\\submitted.xml";
     public JSONArray ReadAll() {
         JSONArray read = new JSONArray();
       
