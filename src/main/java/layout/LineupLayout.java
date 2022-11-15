@@ -6,6 +6,8 @@ package layout;
 
 import org.json.JSONObject;
 import business.MapEnum;
+import java.util.Map;
+import org.json.JSONArray;
 /**
  *
  * @author PC
@@ -25,13 +27,21 @@ public class LineupLayout {
         this.UI = UI;
     }
 
-    public JSONObject toJson(){
+    /*public JSONObject toJsonObject(){
         JSONObject exception = new JSONObject();
         exception.put("map", this.map);
         exception.put("landingLocation", this.landingLocation);
         exception.put("aimLocation", this.aimLocation);
         exception.put("UI", this.UI);
         return exception;
+    }*/
+    public JSONArray toJsonArray(){
+        JSONArray sor = new JSONArray();
+        sor.put(this.map);
+        sor.put(this.landingLocation);
+        sor.put(this.aimLocation);
+        sor.put(this.UI);
+        return sor;
     }
     
     
