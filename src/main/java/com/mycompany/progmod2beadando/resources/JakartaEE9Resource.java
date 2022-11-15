@@ -30,7 +30,7 @@ public class JakartaEE9Resource {
         Lineup L = new Lineup(MapEnum.Bind,"A","There","Crosshair");
         re.put("Map: " + L.getMap());
         re.put("Landing Location: " + L.getLandingLocation());
-        re.put("Aim: " + L.getAimLocation());
+        re.put("Aim Location: " + L.getAimLocation());
         re.put("UI: " + L.getUI());
         return Response.ok(re.toString())
                 .type(MediaType.APPLICATION_JSON)
