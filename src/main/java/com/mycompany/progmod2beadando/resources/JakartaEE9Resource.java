@@ -7,7 +7,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.json.JSONObject;
-
+import access.XmlRead;
 /**
  *
  * @author 
@@ -23,7 +23,8 @@ public class JakartaEE9Resource {
     }
     
     @GET
-    public Response addLineup(){
+    @Path("Example")
+    public Response example(){
         JSONObject re = new JSONObject();
         Lineup L = new Lineup(MapEnum.Bind,"A","There","Crosshair");
         //re.put("Fa", "Somat");
@@ -33,6 +34,17 @@ public class JakartaEE9Resource {
         re.put("UI", L.getUI());
         //return Response.ok(re.toString());
         return Response.ok(re.toString())
+                .type(MediaType.APPLICATION_JSON)
+                .build();
+    }
+    
+    @GET
+    @Path("ReadAll")
+    public Response All(){
+        XmlRead read = new XmlRead();
+        return Response.ok(read.ReadAll().toString())
+        //JSONObject re = read.ReadAll();
+        //return Response.ok(re.toString())
                 .type(MediaType.APPLICATION_JSON)
                 .build();
     }
