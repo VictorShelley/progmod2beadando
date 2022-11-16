@@ -36,7 +36,7 @@ public class XmlRead {
     
     //private static final String FILENAME = "submitted.xml";
     //private static final String FILENAME = "D:\\Netbeans Projects\\progmod2beadando\\src\\main\\java\\controller\\submitted.xml"; //PC
-    private static final String FILENAME = "D:\Netbeans projects\progmod2beadando\src\main\java\controller\submitted.xml"; //Laptop
+    private static final String FILENAME = "D:\\Netbeans projects\\progmod2beadando\\src\\main\\java\\controller"; //Laptop
     public JSONArray ReadAll() {
         JSONArray read = new JSONArray();
       
