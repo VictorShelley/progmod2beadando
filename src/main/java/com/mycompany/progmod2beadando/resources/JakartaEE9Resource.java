@@ -8,7 +8,12 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.json.JSONObject;
 import controller.XmlRead;
+import controller.XmlWrite;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.POST;
+import jakarta.ws.rs.Produces;
 import org.json.JSONArray;
+import model.Convert;
 /**
  *
  * @author 
@@ -28,6 +33,7 @@ public class JakartaEE9Resource {
     public Response example(){
         JSONArray re = new JSONArray();
         Lineup L = new Lineup(MapEnum.Bind,"A","There","Crosshair");
+        re.put("A szöveget '-'-vel válassza el. Pl.:Bind-A-There-Crosshair=");
         re.put("Map: " + L.getMap());
         re.put("Landing Location: " + L.getLandingLocation());
         re.put("Aim Location: " + L.getAimLocation());
@@ -45,6 +51,22 @@ public class JakartaEE9Resource {
         //JSONObject re = read.ReadAll();
         //return Response.ok(re.toString())
                 .type(MediaType.APPLICATION_JSON)
+                .build();
+    }
+    
+    @POST
+    @Path("WriteAdd")
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response WriteAdd(String be){
+        JSONArray ki = new JSONArray();
+        ki = Convert.StringToLineup(be);
+        
+        XmlWrite ir = new XmlWrite();
+        ir.Add(ki);
+        
+        return Response
+                .ok("Hozzáadva")
                 .build();
     }
 }

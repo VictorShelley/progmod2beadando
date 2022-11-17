@@ -1,11 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
--->
-
-
-
 <submitted>
     <lineup id="0">
         <map>Ascend</map>
@@ -24,12 +17,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
         <landingLocation>asdfg</landingLocation>
         <aimLocation>sadfgsdfg</aimLocation>
         <UI>dfghjfghj</UI>
-    </lineup>
-    <lineup id="3">
-        <map>Bind</map>
-        <landingLocation>artzurtzu</landingLocation>
-        <aimLocation>sghjkghjkkghjkghjkkgjdfg</aimLocation>
-        <UI>dfnghjkghjkghjkjdfg</UI>
     </lineup>
 </submitted>
 
