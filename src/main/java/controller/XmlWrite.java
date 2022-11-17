@@ -26,7 +26,7 @@ import controller.XmlRead;
  */
 public class XmlWrite {
 
-   public static void Add(JSONArray uj) /*throws ParserConfigurationException, TransformerException*/ {
+   public static int Add(JSONArray uj) /*throws ParserConfigurationException, TransformerException*/ {
        
     JSONArray done = new JSONArray();
     XmlRead fa = new XmlRead();
@@ -107,6 +107,7 @@ public class XmlWrite {
     } catch (Exception e) {
         e.printStackTrace();
     }//System.out.println("---------dfgdfgdfgdfg-dfgdf-g-dfg-dg-dfg-df-g-dfg-df-gdf-g-fdg-dfg-  " + eddigi);
+    return eddigi;
   }
    
    public static void DelById(Integer del) /*throws ParserConfigurationException, TransformerException*/ {

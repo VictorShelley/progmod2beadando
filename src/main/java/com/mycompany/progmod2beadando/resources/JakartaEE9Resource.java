@@ -75,10 +75,12 @@ public class JakartaEE9Resource {
         ki = Convert.StringToLineup(be);
         
         XmlWrite ir = new XmlWrite();
-        ir.Add(ki);
+        
+        Integer ujid = ir.Add(ki);;
+        String uzenet = "Uj lineup(Map: " + ki.get(0) + ",Landing Location: " + ki.get(1) + ",Aim Location: " + ki.get(2) + ",UI: " + ki.get(3) + ") sikeresen hozzáadva \"" + ujid + "\" id alatt";
         
         return Response
-                .ok()
+                .ok(uzenet)
                 .build();
     }
     
@@ -91,10 +93,10 @@ public class JakartaEE9Resource {
         XmlWrite torles = new XmlWrite();
         Integer torol = Integer.parseInt(be);
         torles.DelById(torol);
-        String uzenet = torol + ". lineup törölve";
+        String uzenet = " \"" + torol + "\" id-vel rendelkező lineup törölve";
         
         return Response
-                .ok(/*uzenet*/)
+                .ok(uzenet)
                 .build();
     }
 }
