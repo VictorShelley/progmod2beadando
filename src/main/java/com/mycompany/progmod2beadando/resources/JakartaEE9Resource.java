@@ -55,6 +55,18 @@ public class JakartaEE9Resource {
     }
     
     @POST
+    @Path("ReadChosenMap")
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response ReadChosenMap(String be){
+        XmlRead read = new XmlRead();
+        MapEnum ki = MapEnum.valueOf(be);
+        return Response.ok(read.SortByMap(ki).toString())
+                .type(MediaType.APPLICATION_JSON)
+                .build();
+    }   
+    
+    @POST
     @Path("WriteAdd")
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.APPLICATION_JSON)
@@ -66,7 +78,23 @@ public class JakartaEE9Resource {
         ir.Add(ki);
         
         return Response
-                .ok("Hozzáadva")
+                .ok()
+                .build();
+    }
+    
+    @POST
+    @Path("DeleteById")
+    @Consumes(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response DeleteById(String be){
+        
+        XmlWrite torles = new XmlWrite();
+        Integer torol = Integer.parseInt(be);
+        torles.DelById(torol);
+        String uzenet = torol + ". lineup törölve";
+        
+        return Response
+                .ok(/*uzenet*/)
                 .build();
     }
 }

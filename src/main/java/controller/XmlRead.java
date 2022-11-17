@@ -137,4 +137,60 @@ public class XmlRead {
         //for(int i =0;i<10;i++) read.put(asdfasz);
         return read;
   }
+    
+    
+    
+    
+    public JSONArray SortByMap(MapEnum valaszt) {
+        JSONArray read = new JSONArray();
+      
+      DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+
+      try {
+          
+          DocumentBuilder db = dbf.newDocumentBuilder();
+
+          Document doc = db.parse(new File(FILENAME));
+          doc.getDocumentElement().normalize();
+
+          
+          
+          NodeList list = doc.getElementsByTagName("lineup");
+
+          for (int temp = 0; temp < list.getLength(); temp++) {
+
+              Node node = list.item(temp);
+
+              if (node.getNodeType() == Node.ELEMENT_NODE) {
+
+                  Element element = (Element) node;
+
+                  String id = element.getAttribute("id");//lineup id
+
+                  //szöveg
+                  String mapstring = element.getElementsByTagName("map").item(0).getTextContent();
+                  MapEnum map= MapEnum.valueOf(mapstring);
+                  String landingLocation = element.getElementsByTagName("landingLocation").item(0).getTextContent();
+                  String aimLocation = element.getElementsByTagName("aimLocation").item(0).getTextContent();
+                  String UI = element.getElementsByTagName("UI").item(0).getTextContent();
+
+                if(valaszt==map){
+                    read.put("id: " + id);
+                    read.put("Map: " + map);
+                    read.put("Landing Location: " + landingLocation);
+                    read.put("Aim Location: " + aimLocation);
+                    read.put("UI: " + UI);
+                  }
+                  
+                  
+
+              }
+          }
+
+      } catch (ParserConfigurationException | SAXException | IOException e) {
+          e.printStackTrace();
+      }
+      
+        return read;
+  }
 }
