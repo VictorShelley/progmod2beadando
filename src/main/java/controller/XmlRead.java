@@ -49,8 +49,7 @@ public class XmlRead {
           Document doc = db.parse(new File(FILENAME));
           doc.getDocumentElement().normalize();
 
-          System.out.println("Root Element: " + doc.getDocumentElement().getNodeName());
-          System.out.println("------");
+          
           
           NodeList list = doc.getElementsByTagName("lineup");
 
@@ -100,8 +99,7 @@ public class XmlRead {
           Document doc = db.parse(new File(FILENAME));
           doc.getDocumentElement().normalize();
 
-          System.out.println("Root Element: " + doc.getDocumentElement().getNodeName());
-          System.out.println("------");
+          
           
           NodeList list = doc.getElementsByTagName("lineup");
 
